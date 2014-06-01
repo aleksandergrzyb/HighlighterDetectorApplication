@@ -110,7 +110,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImageWriteToSavedPhotosAlbum([[info objectForKey:UIImagePickerControllerOriginalImage] fixOrientation], nil, nil, nil);
+//    UIImageWriteToSavedPhotosAlbum([[info objectForKey:UIImagePickerControllerOriginalImage] fixOrientation], nil, nil, nil);
     UIImage *fixedImage = [[info objectForKey:UIImagePickerControllerOriginalImage] fixOrientation];
     [self startProcessingImage:fixedImage];
     self.imageView.image = fixedImage;

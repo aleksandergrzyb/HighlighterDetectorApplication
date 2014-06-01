@@ -1,12 +1,15 @@
 PODS:
+  - GPUImage (0.1.4)
   - OpenCV (2.4.8)
   - TesseractOCRiOS (2.22)
 
 DEPENDENCIES:
+  - GPUImage
   - OpenCV
   - TesseractOCRiOS
 
 SPEC CHECKSUMS:
+  GPUImage: ac2bde5f4dbea02a81ced6313964cec1f2043ca9
   OpenCV: 7d5de7dc31a8f3925eb643b62d16c2cafa373527
   TesseractOCRiOS: 96e638295c3af9d95f27e9999eabfad405274466
 
