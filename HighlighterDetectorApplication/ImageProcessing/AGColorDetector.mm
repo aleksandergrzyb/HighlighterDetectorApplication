@@ -36,9 +36,15 @@ void AGColorDetector::findGreenColorAreaInImage(cv::Mat& image, cv::Mat& outputI
     Canny(processingImage, processingImage, treshold, 2 * treshold);
     findContours(processingImage, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE);
     int maxContourArea = 0, maxContourIndex = 0;
+    vector<vector<cv::Point>> hull(contours.size());
+    for (int i = 0; i < contours.size(); i++) {
+        convexHull(Mat(contours[i]), hull[i], false);
+    }
     for(int i = 0; i < contours.size(); i++) {
-        if (maxContourArea < contourArea(contours[i], false)) {
-            maxContourArea = contourArea(contours[i], false);
+        drawContours(outputImage, contours, i, Scalar(0, 255, 0), 2, 8, hierarchy, 0, cv::Point());
+        drawContours(outputImage, hull, i, Scalar(0, 0, 255), 1, 8, vector<Vec4i>(), 0, cv::Point());
+        if (maxContourArea < contourArea(hull[i], false)) {
+            maxContourArea = contourArea(hull[i], false);
             maxContourIndex = i;
         }
     }
@@ -132,8 +138,8 @@ void AGColorDetector::findCornersOfGreenColorContour(std::vector<cv::Point>& gre
         bottomLeftPoint.y = greenColorContour[bottomLeftPointIndex].y;
     }
     
-    topLeftPoint.x -= offset; topLeftPoint.y -= offset; topRightPoint.x += offset; topRightPoint.y -= offset;
-    bottomRightPoint.x += offset; bottomRightPoint.y += offset; bottomLeftPoint.x -= offset; bottomLeftPoint.y += offset;
+    topLeftPoint.x -= offset; topLeftPoint.y -= 2 * offset; topRightPoint.x += offset; topRightPoint.y -= 2 * offset;
+    bottomRightPoint.x += offset; bottomRightPoint.y += 2 * offset; bottomLeftPoint.x -= offset; bottomLeftPoint.y += 2 * offset;
     
     corners.push_back(topLeftPoint);
     corners.push_back(topRightPoint);

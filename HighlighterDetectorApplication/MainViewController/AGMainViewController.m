@@ -9,11 +9,16 @@
 #import "AGMainViewController.h"
 #import "AGImagePickerManager.h"
 #import "AGHighlighterDetector.h"
+#import "UIImage+FixOrientation.h"
+#import "AGTextProcessing.h"
 
-@interface AGMainViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AGMainViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, AGTextProcessingDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *recognizedText;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) AGHighlighterDetector *highlighterDetector;
+@property (strong, nonatomic) AGTextProcessing *textProcessing;
 @end
 
 @implementation AGMainViewController
@@ -36,6 +41,15 @@
     return _highlighterDetector;
 }
 
+- (AGTextProcessing *)textProcessing
+{
+    if (!_textProcessing) {
+        _textProcessing = [[AGTextProcessing alloc] init];
+        _textProcessing.delegate = self;
+    }
+    return _textProcessing;
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -55,12 +69,27 @@
 
 - (void)configureImageView
 {
+//    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.contentMode = UIViewContentModeTopLeft;
 }
 
 - (void)updateScrollViewContentSize
 {
+//    self.scrollView.contentSize = self.imageView.frame.size;
     self.scrollView.contentSize = self.imageView.image.size;
+}
+
+- (void)startProcessingImage:(UIImage *)image
+{
+    [self.activityIndicator startAnimating];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *processedImage = [self.highlighterDetector processImageToFindGreenHighlighterArea:image];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.imageView.image = processedImage;
+//            [self.activityIndicator stopAnimating];
+//        });
+        [self.textProcessing recognizeTextInImage:processedImage];
+    });
 }
 
 #pragma mark -
@@ -81,9 +110,22 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    self.imageView.image = [self.highlighterDetector processImageToFindGreenHighlighterArea:[info objectForKey:UIImagePickerControllerOriginalImage]];
+    UIImageWriteToSavedPhotosAlbum([[info objectForKey:UIImagePickerControllerOriginalImage] fixOrientation], nil, nil, nil);
+    UIImage *fixedImage = [[info objectForKey:UIImagePickerControllerOriginalImage] fixOrientation];
+    [self startProcessingImage:fixedImage];
+    self.imageView.image = fixedImage;
     [self updateScrollViewContentSize];
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark Text Processing Delegate
+
+- (void)textProcessing:(AGTextProcessing *)textProcessing recognizedText:(NSString *)text inImage:(UIImage *)image
+{
+    self.recognizedText.text = text;
+    self.imageView.image = image;
+    [self.activityIndicator stopAnimating];
 }
 
 @end

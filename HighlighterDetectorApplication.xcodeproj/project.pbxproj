@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		05AEF23B325D430F82913148 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDD4A23117E432780027A1D /* libPods.a */; };
+		5953C7CF193A5C8100EB7808 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 5953C7CE193A5C8100EB7808 /* tessdata */; };
+		5953C7D3193B2D4700EB7808 /* 1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5953C7D1193B2D4700EB7808 /* 1.JPG */; };
+		5953C7D4193B2D4700EB7808 /* 2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5953C7D2193B2D4700EB7808 /* 2.JPG */; };
+		5953C7D6193B2E8D00EB7808 /* photo.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5953C7D5193B2E8D00EB7808 /* photo.JPG */; };
+		5953C7D9193B7F9100EB7808 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5953C7D8193B7F9100EB7808 /* UIImage+FixOrientation.m */; };
+		5953C7DE193B821000EB7808 /* AGTextProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5953C7DD193B821000EB7808 /* AGTextProcessing.m */; };
 		59BE2F2D19332A35006E3C0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BE2F2C19332A35006E3C0B /* Foundation.framework */; };
 		59BE2F2F19332A35006E3C0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BE2F2E19332A35006E3C0B /* CoreGraphics.framework */; };
 		59BE2F3119332A35006E3C0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BE2F3019332A35006E3C0B /* UIKit.framework */; };
@@ -24,7 +30,6 @@
 		59BE2F6819332C4E006E3C0B /* AGColorDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 59BE2F6219332C4E006E3C0B /* AGColorDetector.mm */; };
 		59BE2F6919332C4E006E3C0B /* AGCornerDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 59BE2F6419332C4E006E3C0B /* AGCornerDetector.mm */; };
 		59BE2F6A19332C4E006E3C0B /* AGDrawing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 59BE2F6619332C4E006E3C0B /* AGDrawing.mm */; };
-		59BE2F6D19332EF2006E3C0B /* AGMatToUIImageConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 59BE2F6C19332EF2006E3C0B /* AGMatToUIImageConverter.mm */; };
 		59BE2F7119332F5C006E3C0B /* AGImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BE2F7019332F5C006E3C0B /* AGImagePickerManager.m */; };
 		59BE2F7519332FED006E3C0B /* AGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BE2F7419332FED006E3C0B /* AGMainViewController.m */; };
 		59BE2F78193331F2006E3C0B /* AGHighlighterDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 59BE2F77193331F2006E3C0B /* AGHighlighterDetector.mm */; };
@@ -43,6 +48,14 @@
 
 /* Begin PBXFileReference section */
 		2EDD4A23117E432780027A1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5953C7CE193A5C8100EB7808 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = HighlighterDetectorApplication/tessdata; sourceTree = "<group>"; };
+		5953C7D1193B2D4700EB7808 /* 1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.JPG; path = SamplePhotos/1.JPG; sourceTree = SOURCE_ROOT; };
+		5953C7D2193B2D4700EB7808 /* 2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.JPG; path = SamplePhotos/2.JPG; sourceTree = SOURCE_ROOT; };
+		5953C7D5193B2E8D00EB7808 /* photo.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo.JPG; path = SamplePhotos/photo.JPG; sourceTree = SOURCE_ROOT; };
+		5953C7D7193B7F9100EB7808 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		5953C7D8193B7F9100EB7808 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		5953C7DC193B821000EB7808 /* AGTextProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTextProcessing.h; path = TextProcessing/AGTextProcessing.h; sourceTree = "<group>"; };
+		5953C7DD193B821000EB7808 /* AGTextProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTextProcessing.m; path = TextProcessing/AGTextProcessing.m; sourceTree = "<group>"; };
 		59BE2F2919332A35006E3C0B /* HighlighterDetectorApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighlighterDetectorApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BE2F2C19332A35006E3C0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		59BE2F2E19332A35006E3C0B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,8 +79,6 @@
 		59BE2F6519332C4E006E3C0B /* AGCornerDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGCornerDetector.h; path = ImageProcessing/AGCornerDetector.h; sourceTree = "<group>"; };
 		59BE2F6619332C4E006E3C0B /* AGDrawing.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AGDrawing.mm; path = ImageProcessing/AGDrawing.mm; sourceTree = "<group>"; };
 		59BE2F6719332C4E006E3C0B /* AGDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGDrawing.h; path = ImageProcessing/AGDrawing.h; sourceTree = "<group>"; };
-		59BE2F6B19332EF2006E3C0B /* AGMatToUIImageConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGMatToUIImageConverter.h; path = ImageProcessing/AGMatToUIImageConverter.h; sourceTree = "<group>"; };
-		59BE2F6C19332EF2006E3C0B /* AGMatToUIImageConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AGMatToUIImageConverter.mm; path = ImageProcessing/AGMatToUIImageConverter.mm; sourceTree = "<group>"; };
 		59BE2F6F19332F5C006E3C0B /* AGImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGImagePickerManager.h; path = ImagePickerManager/AGImagePickerManager.h; sourceTree = "<group>"; };
 		59BE2F7019332F5C006E3C0B /* AGImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGImagePickerManager.m; path = ImagePickerManager/AGImagePickerManager.m; sourceTree = "<group>"; };
 		59BE2F7319332FED006E3C0B /* AGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGMainViewController.h; path = MainViewController/AGMainViewController.h; sourceTree = "<group>"; };
@@ -104,9 +115,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5953C7D0193B2D0F00EB7808 /* SampleImages */ = {
+			isa = PBXGroup;
+			children = (
+				5953C7D5193B2E8D00EB7808 /* photo.JPG */,
+				5953C7D1193B2D4700EB7808 /* 1.JPG */,
+				5953C7D2193B2D4700EB7808 /* 2.JPG */,
+			);
+			name = SampleImages;
+			sourceTree = "<group>";
+		};
+		5953C7DB193B81F600EB7808 /* TextProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				5953C7DC193B821000EB7808 /* AGTextProcessing.h */,
+				5953C7DD193B821000EB7808 /* AGTextProcessing.m */,
+			);
+			name = TextProcessing;
+			sourceTree = "<group>";
+		};
 		59BE2F2019332A35006E3C0B = {
 			isa = PBXGroup;
 			children = (
+				5953C7CE193A5C8100EB7808 /* tessdata */,
 				59BE2F3219332A35006E3C0B /* HighlighterDetectorApplication */,
 				59BE2F5119332A35006E3C0B /* HighlighterDetectorApplicationTests */,
 				59BE2F2B19332A35006E3C0B /* Frameworks */,
@@ -139,8 +170,10 @@
 		59BE2F3219332A35006E3C0B /* HighlighterDetectorApplication */ = {
 			isa = PBXGroup;
 			children = (
+				5953C7D0193B2D0F00EB7808 /* SampleImages */,
 				59BE2F7219332FBE006E3C0B /* MainViewController */,
 				59BE2F6E19332F33006E3C0B /* ImagePickerManager */,
+				5953C7DB193B81F600EB7808 /* TextProcessing */,
 				59BE2F6119332C11006E3C0B /* ImageProcessing */,
 				59BE2F3B19332A35006E3C0B /* AGAppDelegate.h */,
 				59BE2F3C19332A35006E3C0B /* AGAppDelegate.m */,
@@ -155,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				59BE2F3419332A35006E3C0B /* HighlighterDetectorApplication-Info.plist */,
+				5953C7D7193B7F9100EB7808 /* UIImage+FixOrientation.h */,
+				5953C7D8193B7F9100EB7808 /* UIImage+FixOrientation.m */,
 				59BE2F3519332A35006E3C0B /* InfoPlist.strings */,
 				59BE2F3819332A35006E3C0B /* main.m */,
 				59BE2F3A19332A35006E3C0B /* HighlighterDetectorApplication-Prefix.pch */,
@@ -185,8 +220,6 @@
 			children = (
 				59BE2F7919334BF3006E3C0B /* UIImage+OpenCV.h */,
 				59BE2F7A19334BF3006E3C0B /* UIImage+OpenCV.mm */,
-				59BE2F6B19332EF2006E3C0B /* AGMatToUIImageConverter.h */,
-				59BE2F6C19332EF2006E3C0B /* AGMatToUIImageConverter.mm */,
 				59BE2F6219332C4E006E3C0B /* AGColorDetector.mm */,
 				59BE2F6319332C4E006E3C0B /* AGColorDetector.h */,
 				59BE2F6419332C4E006E3C0B /* AGCornerDetector.mm */,
@@ -296,7 +329,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5953C7D4193B2D4700EB7808 /* 2.JPG in Resources */,
 				59BE2F4519332A35006E3C0B /* Images.xcassets in Resources */,
+				5953C7CF193A5C8100EB7808 /* tessdata in Resources */,
+				5953C7D3193B2D4700EB7808 /* 1.JPG in Resources */,
+				5953C7D6193B2E8D00EB7808 /* photo.JPG in Resources */,
 				59BE2F3719332A35006E3C0B /* InfoPlist.strings in Resources */,
 				59BE2F4019332A35006E3C0B /* Main.storyboard in Resources */,
 			);
@@ -350,13 +387,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5953C7D9193B7F9100EB7808 /* UIImage+FixOrientation.m in Sources */,
 				59BE2F3D19332A35006E3C0B /* AGAppDelegate.m in Sources */,
 				59BE2F78193331F2006E3C0B /* AGHighlighterDetector.mm in Sources */,
-				59BE2F6D19332EF2006E3C0B /* AGMatToUIImageConverter.mm in Sources */,
 				59BE2F6819332C4E006E3C0B /* AGColorDetector.mm in Sources */,
 				59BE2F3919332A35006E3C0B /* main.m in Sources */,
 				59BE2F7119332F5C006E3C0B /* AGImagePickerManager.m in Sources */,
 				59BE2F7B19334BF3006E3C0B /* UIImage+OpenCV.mm in Sources */,
+				5953C7DE193B821000EB7808 /* AGTextProcessing.m in Sources */,
 				59BE2F7519332FED006E3C0B /* AGMainViewController.m in Sources */,
 				59BE2F6A19332C4E006E3C0B /* AGDrawing.mm in Sources */,
 				59BE2F6919332C4E006E3C0B /* AGCornerDetector.mm in Sources */,
